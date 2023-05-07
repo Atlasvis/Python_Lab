@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <style type="text/css">
+         @page {
+             size: a4 portrait;
+             @frame header_frame {           /* Static Frame */
+                 -pdf-frame-content: header_content;
+                 left: 0pt; width: 595pt; top: 0pt; height: 90pt;
+             }
+             @frame content_frame {          /* Content Frame */
+                -pdf-frame-content: content;
+                 left: 50pt; width: 495pt; top: 90pt; height: 707pt;
+             }
+             @frame footer_frame {           /* Another static Frame */
+                 -pdf-frame-content: footer_content;
+                 left: 0pt; width: 595pt; top: 797pt; height: 45pt;
+             }
+         }
+     </style>
+      <title>Fire Report</title>
+   </head>
+
+   <body>
+      <!-- Content for Static Frame 'header_frame' -->
+      <div id="header_content">
+         <table width = "100%" border = "0" height = "100%" >
+            <tr>
+               <td  style = "height: 90pt; background-color:#030d49">
+                  <h1 style = "color:#ffffff ; text-align: center; font-size:40px">
+                     The US Wildfire Activity Daily Report
+                  </h1>
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <!-- Content for Static Frame 'footer_frame' -->
+      <div id="footer_content"> 
+         <table width = "100%" border = "0" height = "100%" >
+            <tr>
+               <td  style = "height: 45pt; background-color:#030d49 ">
+                     <p style = "color:#ffffff ; text-align: center">
+                        Data Source: https://firms.modaps.eosdis.nasa.gov <br>
+                     </p>
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <!-- Content for Static Frame 'content' -->
+      <div id="content">
+        
+         <table width = "100%" border = "0" height = "100%">
+         <tr>
+            <td  style = "height: 107pt">
+               <h1  style = "font-size:20px">summary</h1>
+               <p  style = "font-size:15px"> On <b>{{date}}</b>, there are in total <b>{{number}}</b> wildfires are detected within the U.S. <br>
+                  <b>{{state}}</b> has the largest number of the wildfire with <b>{{number_state}}</b> across the country.
+            </td>
+         </tr>
+         <tr valign = "top" style = "height: 300pt">
+            <td width = "100%" style = "text-align: center">
+               <img src="Reporting/fire_plot.png"/>
+            </td>
+         
+         </tr>
+         <tr valign = "top" style = "height: 300pt">
+            <td width = "100%" style = "text-align: center">
+               <img src="Reporting/fire_chart.png"/>
+            </td>
+            
+         </tr>
+         </table>
+      </div>
+
+   </body>
+
+</html>
